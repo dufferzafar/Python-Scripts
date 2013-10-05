@@ -1,3 +1,8 @@
+*.sublime-project
+*.sublime-workspace
+
+Help/
+
 *.py[cod]
 
 # C extensions
