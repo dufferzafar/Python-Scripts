@@ -1,4 +1,3 @@
-Python-Scripts
-==============
+# Python-Scripts
 
 Scripts I've written in Python

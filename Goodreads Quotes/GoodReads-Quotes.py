@@ -12,19 +12,20 @@
 # Required Libraries
 import urllib.request
 import os.path
+import re
 
 # Make sure you have BeautifulSoup installed
 from bs4 import BeautifulSoup
 
 # The URL
-url = "https://www.goodreads.com/quotes/list/18654747"
+url = "https://www.goodreads.com//quotes/list/18654747-shadab-zafar?page=4"
 
 # The URL will be saved to this file
 fileName = "GRQuotesPage1.html"
 
 # Doownload file only if it does not exist.
 if os.path.isfile(fileName):
-	print("File Exists. Will Be Read.")
+	print("File Exists. Will Be Read.\n")
 else:
 	print("File Does Not Exists. Will Be Downloaded.")
 	site = urllib.request.urlopen(url)
@@ -42,19 +43,39 @@ f.close()
 # The Debug file
 opFile = "debug.html"
 
-# Quote text and author URL
+# User Metadata
+title = soup.find('title').string.replace("\n", " ")
+titleScrape = re.findall('\((.*?)\)', title)
+
+# Username and Total Quotes
+user = titleScrape[0]
+totalQuotes = re.search('(\d+)$', titleScrape[2]).group(1)\
+
+# While Testing and Debugging
+# quit()
+
+# Quote text, author name and URL
 quoteText = soup.findAll('div', attrs={'class':'quoteText'})
 
+
+print (len(quoteText))
+
+# Quote URL
+quoteFooterRight = soup.findAll('div', attrs={'class':'right'})
+
+
 # Begin Scraping
-with open(opFile, 'wb') as file:
-	for item in quoteText:
-		quote = item.contents[0].encode('ascii', 'ignore')
+# with open(opFile, 'wb') as file:
+	# for (q,r) in zip(quoteText, quoteFooterRight):
 
-		# link = item.find('a')
-		# authorUrl = link.get('href')
-		# author = link.getText
+		# quote = q.contents[0].encode('ascii', 'ignore')
 
-		print(quote)
+		# qLink = q.find('a')
+		# authorUrl = qLink.get('href')
+		# author = qLink.getText
+
+		# rLink = r.find('a')
+		# quoteUrl = rLink.get('href')
+
+		# print(quoteUrl)
 		# file.write(command)
-
-# print (len(quoteText))
