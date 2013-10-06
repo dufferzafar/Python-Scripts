@@ -25,5 +25,7 @@ Scrapes all quotes from a goodreads user's list and displays them, beautifully.
 
 ## <a name="changelog"></a>Changelog
 
+All data Scraped, currently outputs to a simplistic txt format.
+
 Quote Text, Author's Name and URL have been scraped.
 
