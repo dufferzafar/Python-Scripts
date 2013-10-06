@@ -1,23 +1,60 @@
+##################################################
+#
+# Goodreads Quotes Scraper
+#
+# Scrapes out all the quotes from GoodReads Quotes
+# URL. The results are stored in JSON/XML format.
+#
+# @dufferzafar
+#
+##################################################
+
+# Required Libraries
 import urllib.request
-import pprint
-import sys
+import os.path
+
+# Make sure you have BeautifulSoup installed
 from bs4 import BeautifulSoup
 
+# The URL
 url = "https://www.goodreads.com/quotes/list/18654747"
 
-# f = open('/Users/myUserName/Desktop/contacts.html')
-# soup = BeautifulSoup(f)
-# sys.stdout.errors = 'replace'
-# soup = BeautifulSoup(html_doc)
-soup = BeautifulSoup(urllib.request.urlopen(url))
-list = soup.findAll('div', attrs={'class':'quoteText'})
-# print (list)
-# pprint.pprint(list)
-#
+# The URL will be saved to this file
+fileName = "GRQuotesPage1.html"
 
-with open("D:\\Output.txt", 'w') as file:
-    for item in list:
-        file.write("{}\n".format(item))
+# Doownload file only if it does not exist.
+if os.path.isfile(fileName):
+	print("File Exists. Will Be Read.")
+else:
+	print("File Does Not Exists. Will Be Downloaded.")
+	site = urllib.request.urlopen(url)
+	data = site.read()
 
-# print (len(list))
-# soup.find_all('a')
+	f = open(fileName, "wb")
+	f.write(data)
+	f.close()
+
+# Create the soup.
+f = open(fileName)
+soup = BeautifulSoup(f)
+f.close()
+
+# The Debug file
+opFile = "debug.html"
+
+# Quote text and author URL
+quoteText = soup.findAll('div', attrs={'class':'quoteText'})
+
+# Begin Scraping
+with open(opFile, 'wb') as file:
+	for item in quoteText:
+		quote = item.contents[0].encode('ascii', 'ignore')
+
+		# link = item.find('a')
+		# authorUrl = link.get('href')
+		# author = link.getText
+
+		print(quote)
+		# file.write(command)
+
+# print (len(quoteText))
