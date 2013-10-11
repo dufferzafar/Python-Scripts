@@ -45,7 +45,7 @@ soup = BeautifulSoup(f)
 f.close()
 
 # The Debug file
-opFile = "debug.txt"
+opFile = open("debug.txt", 'w')
 
 # User Metadata
 title = soup.find('title').string.replace("\n", " ")
@@ -67,22 +67,21 @@ quoteText = soup.findAll('div', attrs={'class':'quoteText'})
 quoteFooterRight = soup.findAll('div', attrs={'class':'right'})
 
 # Begin Scraping
-with open(opFile, 'w') as file:
-	for (q,r) in zip(quoteText, quoteFooterRight):
+for (q,r) in zip(quoteText, quoteFooterRight):
 
-		quote = q.contents[0].encode('ascii', 'ignore').decode('ascii', 'ignore')
+	quote = q.contents[0].encode('ascii', 'ignore').decode('ascii', 'ignore')
 
-		qLink = q.find('a')
-		authorUrl = qLink.get('href')
-		author = qLink.getText()
+	qLink = q.find('a')
+	authorUrl = qLink.get('href')
+	author = qLink.getText()
 
-		rLink = r.find('a')
-		quoteUrl = rLink.get('href')
+	rLink = r.find('a')
+	quoteUrl = rLink.get('href')
 
-		# json.dumps()
+	# json.dumps()
 
-		# print(quoteUrl)
-		file.write("Quote = " + re.sub("  +", "", quote.replace("\n", "")) + "\n")
-		file.write("QuoteURL = " + quoteUrl + "\n")
-		file.write("Author = " + author + "\n")
-		file.write("AuthorURL = " + authorUrl + "\n\n\n")
+	# print(quoteUrl)
+	f.write("Quote = " + re.sub("  +", "", quote.replace("\n", "")) + "\n")
+	f.write("QuoteURL = " + quoteUrl + "\n")
+	f.write("Author = " + author + "\n")
+	f.write("AuthorURL = " + authorUrl + "\n\n\n")
