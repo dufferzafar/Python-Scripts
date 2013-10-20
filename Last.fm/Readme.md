@@ -12,9 +12,9 @@ Get top tracks of an artist and then locate them on the filesystem.
 
 ## <a name="todo"></a>Todo
 
-* os.walk
 * Create playlist
 
 ## <a name="changelog"></a>Changelog
 
+* Can find files
 * XML Output Parsed
