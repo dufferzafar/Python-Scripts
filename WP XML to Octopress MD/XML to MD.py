@@ -17,9 +17,9 @@ import xml.etree.ElementTree as ET
 
 # The wordpress namespace dictionary
 nsDict = {	'wp': 'http://wordpress.org/export/1.2/',
-				'dc': 'http://purl.org/dc/elements/1.1/',
-				'content': 'http://purl.org/rss/1.0/modules/content/',
-				'excerpt': 'http://wordpress.org/export/1.2/excerpt/'}
+			'dc': 'http://purl.org/dc/elements/1.1/',
+			'content': 'http://purl.org/rss/1.0/modules/content/',
+			'excerpt': 'http://wordpress.org/export/1.2/excerpt/'}
 
 # Debugging Output
 dbg = open("debug.md", "wb")
