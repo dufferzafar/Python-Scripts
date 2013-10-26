@@ -35,6 +35,7 @@ I'll proabably be creating js files so that the data can be charted using some g
 
 ## <a name="changelog"></a>Changelog
 
+* Added Downloaded/Uploaded Data to Graph
 * December Graph Done :)
 * Time Per Day for December
 
