@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>dufferZafar's Internet Usage</title>
+		<script src="Chart.min.js"></script>
+		<meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+		<style>
+			canvas{
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" height="600" width="1200"></canvas>
+		<script src="dataset.js"></script>
+		<script>
+		var barChartData = {
+			// labels : ["January","February","March","April","May","June","July","August","September","October","November","December"],
+			labels : [1,2,3,4,5,6,7],
+			datasets : [
+				{
+					fillColor : "rgba(220,220,220,0.5)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					data : values
+				},
+				// {
+				// 	fillColor : "rgba(151,187,205,0.5)",
+				// 	strokeColor : "rgba(151,187,205,1)",
+				// 	pointColor : "rgba(151,187,205,1)",
+				// 	pointStrokeColor : "#fff",
+				// 	data : [28,48,40,19,96,27,100]
+				// }
+			]
+		}
+			var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(barChartData);
+		</script>
+	</body>
+</html>

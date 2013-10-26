@@ -2,6 +2,7 @@
 *.sublime-workspace
 
 Help/
+/Help/
 
 *.py[cod]
 
