@@ -10,19 +10,21 @@
 		</style>
 	</head>
 	<body>
-		<canvas id="canvas" height="600" width="1200"></canvas>
+		<h1 align="Center">Internet Usage In December 2012</h1>
+		<h1 align="Center">(minutes per day)</h1>
+		<canvas id="canvas" height="500" width="1200" style="position:relative; top:0px; left:75px;"></canvas>
 		<script src="dataset.js"></script>
 		<script>
 		var barChartData = {
 			// labels : ["January","February","March","April","May","June","July","August","September","October","November","December"],
-			labels : [1,2,3,4,5,6,7],
+			labels : labelValues,
 			datasets : [
 				{
 					fillColor : "rgba(220,220,220,0.5)",
 					strokeColor : "rgba(220,220,220,1)",
 					pointColor : "rgba(220,220,220,1)",
 					pointStrokeColor : "#fff",
-					data : values
+					data : dataValues
 				},
 				// {
 				// 	fillColor : "rgba(151,187,205,0.5)",
