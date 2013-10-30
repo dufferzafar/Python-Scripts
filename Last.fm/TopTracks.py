@@ -8,10 +8,10 @@ import HelperFunctions
 
 # Script Mode
 # list / playlist
-mode = "list"
+mode = "playlist"
 
 # The artist to look for
-artist = "Barcelona"
+artist = "U2"
 
 # Discography Folder
 if mode == "playlist":
@@ -81,4 +81,4 @@ elif mode == "playlist":
     print("All Done!")
 
     # Play Some Music!!
-    # os.startfile(playlist)
+    os.startfile(playlist)

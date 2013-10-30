@@ -19,6 +19,17 @@ These set of scripts will parse those XML Files to convert the crude data into a
 
 I'll proabably be creating js files so that the data can be charted using some graphing library.
 
+Stuff In Python:
+
+* Parse All XML and Create as-is JS datasets.
+
+Stuff In JavaScript:
+
+* Load datasets into graphs.
+* Current graphing library: [ChartJS](www.chartjs.org)
+* Minimalist Interface ready to be integrated into the blog.
+* Picker Controls: Month. Time/Download/Upload.
+
 ## <a name="todo"></a>Todo
 
 * Better Graphing Ideas
