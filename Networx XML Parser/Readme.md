@@ -11,13 +11,13 @@ Parse [Networx](http://www.softperfect.com/products/networx) backup XMLs to crea
 
 ## <a name="usage"></a>Usage Scenario
 
-I've been creating a backup of Networx Data every month for the past one year. The backups are saved in XML format.
+I've been creating a backup of network usage data every month for the past one year. Stuff like "Bytes Downloaded", "Bytes Uploaded", "Session Dialup Durations". [Networx](http://www.softperfect.com/products/networx) saves these backups in XML format.
 
-I now wish to use all that data to create some usage statistics.
+I now wish to use all this data to create nice usage statistics.
 
 These set of scripts will parse those XML Files to convert the crude data into a more usable format.
 
-I'll proabably be creating js files so that the data can be charted using some graphing library.
+I'll probably be creating js files so that the data can be charted using some graphing library.
 
 Stuff In Python:
 

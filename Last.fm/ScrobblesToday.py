@@ -10,15 +10,18 @@ import xml.etree.ElementTree as ET
 # http://ws.audioscrobbler.com/2.0/?method=user.getFriends&user=dufferzafar&recenttracks=0&api_key=da70281f2f464cfaa4638c4bfe820f9a
 
 # The timestamp of today
-unixTimeStamp = int(time.mktime(time.strptime(DT.strftime(DT.today() - timedelta(days=0), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
+# unixTimeStamp = int(time.mktime(time.strptime(DT.strftime(DT.today() - timedelta(days=0), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
+unixTS1 = int(time.mktime(time.strptime(DT.strftime(DT.today() - timedelta(days=1), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
+unixTS0 = int(time.mktime(time.strptime(DT.strftime(DT.today(), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
+unixTS2 = int(time.mktime(time.strptime(DT.strftime(DT.today() + timedelta(days=1), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
 
 # Don't abuse, Please.
 api_key = "da70281f2f464cfaa4638c4bfe820f9a"
 
 # Last.fm API
 root_url = "http://ws.audioscrobbler.com/2.0/?"
-params = urllib.parse.urlencode({'method': 'user.getRecentTracks', 'user': 'dufferzafar', 'from': unixTimeStamp, 'api_key': api_key})
-params2 = urllib.parse.urlencode({'method': 'user.getRecentTracks', 'user': 'shivamrana', 'from': unixTimeStamp, 'api_key': api_key})
+params = urllib.parse.urlencode({'method': 'user.getRecentTracks', 'user': 'dufferzafar', 'from': unixTS0, 'to': unixTS2, 'api_key': api_key})
+params2 = urllib.parse.urlencode({'method': 'user.getRecentTracks', 'user': 'shivamrana', 'from': unixTS0, 'to': unixTS2, 'api_key': api_key})
 # The file where lastfm response will be saved
 # print("Downloading Data...")
 
