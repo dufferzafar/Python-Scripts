@@ -11,7 +11,7 @@ import HelperFunctions
 mode = "playlist"
 
 # The artist to look for
-artist = "U2"
+artist = "Explosions in the sky"
 
 # Number of tracks to download
 limit = "20"
@@ -78,7 +78,7 @@ elif mode == "playlist":
     print("=====================")
 
     # Play Some Music!!
-    os.startfile(playlist)
+    # os.startfile(playlist)
 
 # Whew!!
 # print("All Done!")
