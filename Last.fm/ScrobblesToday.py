@@ -20,8 +20,8 @@ api_key = "da70281f2f464cfaa4638c4bfe820f9a"
 
 # Last.fm API
 root_url = "http://ws.audioscrobbler.com/2.0/?"
-params = urllib.parse.urlencode({'method': 'user.getRecentTracks', 'user': 'dufferzafar', 'from': unixTS0, 'to': unixTS2, 'api_key': api_key})
-params2 = urllib.parse.urlencode({'method': 'user.getRecentTracks', 'user': 'shivamrana', 'from': unixTS0, 'to': unixTS2, 'api_key': api_key})
+params = urllib.parse.urlencode({'method': 'user.getRecentTracks', 'user': 'dufferzafar', 'from': unixTS1, 'to': unixTS2, 'api_key': api_key})
+params2 = urllib.parse.urlencode({'method': 'user.getRecentTracks', 'user': 'shivamrana', 'from': unixTS1, 'to': unixTS2, 'api_key': api_key})
 # The file where lastfm response will be saved
 # print("Downloading Data...")
 
