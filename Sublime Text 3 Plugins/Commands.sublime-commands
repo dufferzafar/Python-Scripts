@@ -1,0 +1,5 @@
+[
+    { "caption": "Insert: Timestamp", "command": "timestamp" },
+    { "caption": "Open Folder: Project", "command": "open_project_folder" },
+    { "caption": "Open Folder: File ", "command": "open_file_folder" },
+]

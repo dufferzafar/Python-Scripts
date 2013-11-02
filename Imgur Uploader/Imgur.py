@@ -1,4 +1,4 @@
-#
+# 02/11/2013-18:45
 import webbrowser
 import pyimgur
 
