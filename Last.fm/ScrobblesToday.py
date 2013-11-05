@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 
 # The timestamp of today
 # unixTimeStamp = int(time.mktime(time.strptime(DT.strftime(DT.today() - timedelta(days=0), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
-unixTS1 = int(time.mktime(time.strptime(DT.strftime(DT.today() - timedelta(days=1), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
+unixTS1 = int(time.mktime(time.strptime(DT.strftime(DT.today() - timedelta(days=2), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
 unixTS0 = int(time.mktime(time.strptime(DT.strftime(DT.today(), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
 unixTS2 = int(time.mktime(time.strptime(DT.strftime(DT.today() + timedelta(days=1), '%Y-%m-%d'), '%Y-%m-%d'))) - time.timezone
 
