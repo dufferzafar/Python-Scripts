@@ -60,6 +60,8 @@ I then used chart.js to create charts of my internet usage.
 
 **Tech:** datetime module. XML parsing.
 
+This script has been moved to a new repository - [Internet-Usage](http://github.com/dufferzafar/internet-usage).
+
 # <a name="wp"></a>WP XML to Octopress MD
 
 I used this script to shift my blog from Wordpress to Octopress.

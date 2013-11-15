@@ -11,7 +11,7 @@ import HelperFunctions
 mode = "playlist"
 
 # The artist to look for
-artist = "Explosions in the sky"
+artist = "Stars"
 
 # Number of tracks to download
 limit = "20"
