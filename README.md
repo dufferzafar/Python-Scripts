@@ -56,8 +56,6 @@ https://courses.edx.org/courses/MITx/6.00.1x/3T2013/courseware/
 
 Parses [Networx](http://www.softperfect.com/products/networx) backup XMLs and outputs the data in js format. 
 
-I then used chart.js to create charts of my internet usage.
-
 **Tech:** datetime module. XML parsing.
 
 This script has been moved to a new repository - [Internet-Usage](http://github.com/dufferzafar/internet-usage).
