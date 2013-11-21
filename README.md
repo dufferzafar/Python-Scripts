@@ -71,3 +71,7 @@ It creates individual blog posts in markdown format from a wordpress export file
 # <a name="sublime"></a>Sublime Text 3 Plugins
 
 Small Plugins that I've written/copied for sublime text.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dufferzafar/python-scripts/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
