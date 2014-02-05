@@ -5,6 +5,8 @@ Help/
 /Help/
 MP3 Metadata/mutagen3
 
+*.xml
+
 *.py[cod]
 
 # C extensions

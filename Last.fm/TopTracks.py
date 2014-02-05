@@ -11,7 +11,7 @@ import HelperFunctions
 mode = "playlist"
 
 # The artist to look for
-artist = "Stars"
+# artist = "Stars"
 
 # Number of tracks to download
 limit = "20"
@@ -81,4 +81,4 @@ elif mode == "playlist":
     # os.startfile(playlist)
 
 # Whew!!
-# print("All Done!")
+print("All Done!")

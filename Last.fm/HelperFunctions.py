@@ -9,15 +9,17 @@ def downloadToFile(url, fileName):
     """
 
     # Check if the file exist?
-    if os.path.isfile(fileName):
-        # print("File Exists. Will Be Read.\n")
-        pass
-    else:
-        # print("File Does Not Exists. Will Be Downloaded.")
-        site = urllib.request.urlopen(url)
-        data = site.read()
+    if not os.path.isfile(fileName):
 
-        f = open(fileName, "wb")
-        f.write(data)
-        f.close()
-        # print("File Downloaded.")
+        try:
+            site = urllib.request.urlopen(url)
+            data = site.read()
+
+            f = open(fileName, "wb")
+            f.write(data)
+            f.close()
+            # print("File Downloaded.")
+            return 1
+
+        except:
+            return 0
