@@ -1,13 +1,3 @@
-##################################################
-#
-# WP XML to Octopress MD
-#
-# Convert wordpress posts to markdowns.
-#
-# @dufferzafar
-#
-##################################################
-
 # Required Libraries
 import os
 import re

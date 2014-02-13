@@ -7,8 +7,6 @@ Upload images to Imgur silently.
 * [Stuff to do](#todo)
 * [Changelog](#changelog)
 
-<!-- ## <a name="usage"></a>Usage -->
-
 ## <a name="todo"></a>Todo
 
 * Silent Upload(s) in the background.

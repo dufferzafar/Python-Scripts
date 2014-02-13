@@ -4,11 +4,8 @@ Scrapes all quotes from a goodreads user's list and displays them, beautifully.
 
 ## Table of Contents
 
-<!-- * [Usage Instructions](#usage) -->
 * [Stuff to do](#todo)
 * [Changelog](#changelog)
-
-<!-- ## <a name="usage"></a>Usage -->
 
 ## <a name="todo"></a>Todo
 
@@ -25,7 +22,6 @@ Scrapes all quotes from a goodreads user's list and displays them, beautifully.
 
 ## <a name="changelog"></a>Changelog
 
-All data Scraped, currently outputs to a simplistic txt format.
+* All data Scraped, currently outputs to a simplistic txt format.
 
-Quote Text, Author's Name and URL have been scraped.
-
+* Quote Text, Author's Name and URL have been scraped.

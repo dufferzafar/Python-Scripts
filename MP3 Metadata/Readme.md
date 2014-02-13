@@ -6,14 +6,12 @@ Note: Mutagen is not compatible with python 3 but [mutagenx](https://github.com/
 
 ## Table of Contents
 
-<!-- * [Stuff to do](#todo) -->
+* [Use-Case](#use)
 * [Changelog](#changelog)
 
-<!-- ## <a name="usage"></a>Usage -->
+## <a name="use"></a>Use-Case
 
-<!-- ## <a name="todo"></a>Todo -->
-
-
+Bollywood songs usually have multiple artists. The ID3 artist tag of these songs commonly use '&' or ',' to separate artist names. When these songs are scrobbled to last.fm the artists don't show up correctly. So I tried replacing those characters with '/' and it all sort-of worked.
 
 ## <a name="changelog"></a>Changelog
 

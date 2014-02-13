@@ -2,13 +2,13 @@
 
 Convert a wordpress exported XML to Octopress markdown files.
 
+I used it once to migrate my WP blog to Octopress, haven't needed it since then.
+
 ## Table of Contents
 
-<!-- * [Usage Instructions](#usage) -->
 * [Stuff to do](#todo)
 * [Changelog](#changelog)
 
-<!-- ## <a name="usage"></a>Usage -->
 ## <a name="todo"></a>Todo
 
 * Add htm2text support
