@@ -2,6 +2,8 @@
 
 Creates a zero byte mirror of a folder at another folder.
 
+![Properties](/0xMirror/Screenshot.png)
+
 __Why?__
 
 My laptop conked out once, and I had no idea of _what_ exactly I would lose if it never booted up again. 
@@ -22,7 +24,7 @@ __Shout-outs:__
 
 * Remove the bug that wants destination not be a part of source
 
-* Create a zip file too (while creating the mirror)
+* Create a zip file (while mirroring) and copy the file to the Dropbox folder on completion. 
 
 * A Progress Bar? (OH YEAH!!)
 

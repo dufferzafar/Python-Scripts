@@ -38,6 +38,7 @@ for cur_dir, dirs, files in os.walk(src_root):
     for dirname in dirs:
         destination = os.path.join(dest_dir, dirname)
 
+        # Note: What if an error occurs here?
         if not os.path.exists(destination):
             os.makedirs(destination)
 
