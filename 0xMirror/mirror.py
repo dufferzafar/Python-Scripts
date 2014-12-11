@@ -32,6 +32,8 @@ for cur_dir, dirs, files in os.walk(src_root):
         if ignore in dirs:
             dirs.remove(ignore)
 
+    # Bug: Both the paths should end with a slash
+    # or this will fail
     dest_dir = cur_dir.replace(src_root, dest_root)
 
     # Create empty directories
