@@ -6,15 +6,22 @@ Here are some of the scripts I've managed to write. Most of them are 'quick-and-
 
 ## List of scripts
 
-* [Last.fm](#lfm)
-* [MusicBrainz IRC Chatlogs Downloader](#irc)
+* [0xMirror](#mirror)
 * [Batch Edit MP3 Metadata](#meta)
 * [Goodreads Quotes](#gr)
 * [Imgur Uploader](#imgur)
+* [Last.fm](#lfm)
 * [MITx Solutions](#mitx)
+* [MusicBrainz IRC Chatlogs Downloader](#irc)
 * [Networx XML Parser](#networx)
-* [WP XML to Octopress MD](#wp)
 * [Sublime Text 3 Plugins](#sublime)
+* [WP XML to Octopress MD](#wp)
+
+# <a name="mirror"></a>0xMirror
+
+A script to create a zero-byte mirror of an entire hard disk.
+
+**Tech:** scandir
 
 # <a name="gr"></a>Goodreads Quotes
 
