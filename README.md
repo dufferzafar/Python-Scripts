@@ -7,6 +7,7 @@ Here are some of the scripts I've managed to write. Most of them are 'quick-and-
 ## List of scripts
 
 * [0xMirror](#mirror)
+* [Sphinx Linkfix](#linkfix)
 * [Batch Edit MP3 Metadata](#meta)
 * [Goodreads Quotes](#gr)
 * [Imgur Uploader](#imgur)
@@ -22,6 +23,12 @@ Here are some of the scripts I've managed to write. Most of them are 'quick-and-
 A script to create a zero-byte mirror of an entire hard disk.
 
 **Tech:** scandir
+
+# <a name="linkfix"></a>Sphinx Linkfix
+
+Uses the linkcheck's output file to fix links in docs.
+
+Originally created for [this issue](https://github.com/scrapy/scrapy/issues/606).
 
 # <a name="gr"></a>Goodreads Quotes
 
