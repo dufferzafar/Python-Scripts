@@ -7,7 +7,6 @@ Here are some of the scripts I've managed to write. Most of them are 'quick-and-
 ## List of scripts
 
 * [0xMirror](#mirror)
-* [Sphinx Linkfix](#linkfix)
 * [Batch Edit MP3 Metadata](#meta)
 * [Goodreads Quotes](#gr)
 * [Imgur Uploader](#imgur)
@@ -15,6 +14,8 @@ Here are some of the scripts I've managed to write. Most of them are 'quick-and-
 * [MITx Solutions](#mitx)
 * [MusicBrainz IRC Chatlogs Downloader](#irc)
 * [Networx XML Parser](#networx)
+* [Network Usage Analyst](#netuse)
+* [Sphinx Linkfix](#linkfix)
 * [Sublime Text 3 Plugins](#sublime)
 * [WP XML to Octopress MD](#wp)
 
@@ -23,12 +24,6 @@ Here are some of the scripts I've managed to write. Most of them are 'quick-and-
 A script to create a zero-byte mirror of an entire hard disk.
 
 **Tech:** scandir
-
-# <a name="linkfix"></a>Sphinx Linkfix
-
-Uses the linkcheck's output file to fix links in docs.
-
-Originally created for [this issue](https://github.com/scrapy/scrapy/issues/606).
 
 # <a name="gr"></a>Goodreads Quotes
 
@@ -78,6 +73,12 @@ Parses [Networx](http://www.softperfect.com/products/networx) backup XMLs and ou
 
 This script has been moved to a new repository - [Internet-Usage](http://github.com/dufferzafar/internet-usage).
 
+# <a name="netuse"></a>Network Usage Analyst
+
+I have a cron job setup that dumps my network usage to files. 
+
+This script reads in those files and outputs data such as data downloaded this month, data left and suggested usage.
+
 # <a name="wp"></a>WP XML to Octopress MD
 
 I used this script to shift my blog from Wordpress to Octopress.
@@ -85,6 +86,12 @@ I used this script to shift my blog from Wordpress to Octopress.
 It creates individual blog posts in markdown format from a wordpress export file (XML).
 
 **Tech:** XML Parsing. Namespace Dictionaries.
+
+# <a name="linkfix"></a>Sphinx Linkfix
+
+Uses the linkcheck's output file to fix links in docs.
+
+Originally created for [this issue](https://github.com/scrapy/scrapy/issues/606).
 
 # <a name="sublime"></a>Sublime Text 3 Plugins
 
@@ -99,4 +106,3 @@ Use Mutagen to modify artist tag of multiple mp3 files.
 # <a name="irc"></a>MusicBrainz IRC Chatlogs Downloader
 
 Script used to download IRC Chatlogs of #musicbrainz and #musicbrainz-devel.
-
