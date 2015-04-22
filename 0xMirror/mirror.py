@@ -11,7 +11,7 @@ import shutil
 src_root = "D:\\Documents"
 dest_root = "F:\\Mirror"
 
-ignore_dirs = ['.git', 'env', "__pycache__", "node_modules"]
+ignore_dirs = ['.git', 'env', "__pycache__", "node_modules", "$RECYCLE.BIN", "System Volume Information"]
 
 # Todo: Used only while debugging
 if os.path.exists(dest_root):
@@ -52,14 +52,15 @@ for cur_dir, dirs, files in os.walk(src_root):
             # Pythonic way to `touch` a file?
             f = open(destination, "w")
             f.close()
-        except:
-            errors.append(os.path.join(cur_dir, filename))
-        else:
             # Fix the timestamps of the files at destination
             stinfo = os.stat(os.path.join(cur_dir, filename))
             os.utime(destination, (stinfo.st_atime, stinfo.st_mtime))
+        except:
+            errors.append(os.path.join(cur_dir, filename))
 
 # All Done!
 print("Mirror completed in %.2f seconds with %d errors.\n" %
       ((time.time() - start_time), len(errors)))
-print("Files that errored:\n\n", '\n'.join(errors))
+
+if errors:
+    print("Files that errored:\n\n", '\n'.join(errors))
