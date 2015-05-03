@@ -1,9 +1,12 @@
 # Geeks For Geeks Scraper
 
-Create a nice PDF from posts on Geeks for Geeks.
+Create PDFs from posts on Geeks for Geeks.
+
+![One of the generated PDFs](screenshot.png)
 
 ## Todo
 
-* Test with other type of pages.
+* Handle Images
 
-* Find *nice* posts!
+* Improve Quality of the output
+  * Syntax Highlight Code?
