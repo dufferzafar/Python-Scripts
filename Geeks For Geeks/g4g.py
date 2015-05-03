@@ -1,3 +1,4 @@
+import os
 import sys
 import requests
 
@@ -61,17 +62,35 @@ def print_pdf(html, filename):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
-    from links import topic_sets
+    from links import topics, topic_sets
 
+    # Fetch all set pages
     for topic in topic_sets:
+        if os.path.isfile(topic[0] + ".pdf"):
+            print("Skipping: " + topic[0])
+            continue
+
         print("Working on: " + topic[0])
 
         html = ""
-
         # Fetch each set
         for num in range(1, topic[2] + 1):
             html += parse(topic[1] % num)
 
         print_pdf(html, topic[0] + ".pdf")
+
+    # Fetch pages grouped by topics
+    for topic in topics:
+        if os.path.isfile(topic + ".pdf"):
+            print("Skipping: " + topic)
+            continue
+
+        print("Working on: " + topic)
+
+        html = ""
+        for page in topics[topic]:
+            html += parse(page)
+
+        print_pdf(html, topic + ".pdf")
 
     QApplication.exit()
