@@ -9,8 +9,12 @@ def parse(url):
     """ Fetch a URL and return post content. """
 
     # Soupify!
-    response = requests.get(url).text
-    soup = BeautifulSoup(response)
+    response = requests.get(url)
+
+    if not response.ok:
+        return ''
+
+    soup = BeautifulSoup(response.text)
 
     # Remove big stuff!
     for elem in soup.findAll(['script', 'style', 'ins', 'iframe']):
@@ -23,7 +27,8 @@ def parse(url):
     html = content.decode_contents()
 
     # Details, baby!
-    block = ['div', 'Related Topics', 'twitter-share-button', 'g:plusone']
+    block = ['div', 'Related Topics', 'twitter-share-button', 'g:plusone',
+             'Please write comments']
 
     lines = html.splitlines(True)
 
@@ -51,15 +56,22 @@ def print_pdf(html, filename):
 
     doc.print_(printer)
 
-    print "PDF Generated: " + filename
+    print("PDF Generated: " + filename)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
-    # Create a PDF for each output based questions page.
-    # Todo: Find a way to merge all these pdfs!
-    output = "http://www.geeksforgeeks.org/output-of-c-program-set-%d/"
-    for num in range(1, 20):
-        print_pdf(parse(output % num), "Set %d.pdf" % num)
+    from links import topic_sets
+
+    for topic in topic_sets:
+        print("Working on: " + topic[0])
+
+        html = ""
+
+        # Fetch each set
+        for num in range(1, topic[2] + 1):
+            html += parse(topic[1] % num)
+
+        print_pdf(html, topic[0] + ".pdf")
 
     QApplication.exit()
