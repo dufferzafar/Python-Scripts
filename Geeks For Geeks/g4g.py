@@ -3,7 +3,9 @@ import sys
 import requests
 
 from bs4 import BeautifulSoup
+
 from PyQt4.QtGui import QTextDocument, QPrinter, QApplication
+from PyQt4.QtWebKit import QWebView
 
 
 def parse(url):
@@ -27,27 +29,30 @@ def parse(url):
     content = soup.find(id="content")
     html = content.decode_contents()
 
-    # Details, baby!
-    block = ['div', 'Related Topics', 'twitter-share-button', 'g:plusone',
-             'Please write comments']
+    # # Details, baby!
+    # block = ['div', 'Related Topics', 'twitter-share-button', 'g:plusone',
+    #          'Please write comments']
 
-    lines = html.splitlines(True)
+    # lines = html.splitlines(True)
 
-    for line in lines:
-        for item in block:
-            if item in line:
-                lines.remove(line)
-                break
+    # for line in lines:
+    #     for item in block:
+    #         if item in line:
+    #             lines.remove(line)
+    #             break
 
-    html = ''.join(lines)
+    # html = ''.join(lines)
     return html
 
 
 def print_pdf(html, filename):
     """ Print HTML to PDF. """
 
-    doc = QTextDocument()
-    doc.setHtml(html)
+    wv = QWebView()
+    wv.setHtml(html)
+
+    # doc = QTextDocument()
+    # doc.setHtml(html)
 
     printer = QPrinter()
     printer.setOutputFileName(filename)
@@ -55,7 +60,8 @@ def print_pdf(html, filename):
     printer.setPageSize(QPrinter.A4)
     printer.setPageMargins(15, 15, 15, 15, QPrinter.Millimeter)
 
-    doc.print_(printer)
+    # doc.print_(printer)
+    wv.print_(printer)
 
     print("PDF Generated: " + filename)
 
