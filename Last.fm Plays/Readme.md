@@ -1,6 +1,6 @@
-# Last.fm Scripts
+# Last.fm Plays
 
-Scripts that make use of the last.fm API
+Scripts that make use of the last.fm API.
 
 ## List of scripts
 
