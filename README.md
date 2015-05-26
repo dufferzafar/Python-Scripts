@@ -8,13 +8,14 @@ Here are some of the scripts I've managed to write. Most of them are 'quick-and-
 
 * [0xMirror](#mirror)
 * [Batch Edit MP3 Metadata](#meta)
+* [Geeks for Geeks Scraper](#g4g)
 * [Goodreads Quotes](#gr)
-* [Imgur Uploader](#imgur)
-* [Last.fm](#lfm)
+* [Last.fm Plays](#lfm-plays)
+* [Last.fm Backup](#lfm-backup)
 * [MITx Solutions](#mitx)
 * [MusicBrainz IRC Chatlogs Downloader](#irc)
-* [Networx XML Parser](#networx)
 * [Network Usage Analyst](#netuse)
+* [Networx XML Parser](#networx)
 * [Sphinx Linkfix](#linkfix)
 * [Sublime Text 3 Plugins](#sublime)
 * [WP XML to Octopress MD](#wp)
@@ -25,6 +26,12 @@ A script to create a zero-byte mirror of an entire hard disk.
 
 **Tech:** scandir
 
+# <a name="meta"></a>Batch Edit MP3 Metadata
+
+Use Mutagen to modify artist tag of multiple mp3 files.
+
+**Tech:** Mutagen.
+
 # <a name="gr"></a>Goodreads Quotes
 
 A script to download all the quotes I've liked on Goodreads. The plan was to create a offline database that I could edit.
@@ -33,15 +40,13 @@ Couldn't decide how/what to do. So this is just half-done.
 
 **Tech:** BeautifulSoup to parse the webpage downloaded.
 
-# <a name="imgur"></a>Imgur Uploader
+# <a name="gr"></a>Geeks for Geeks Scraper
 
-Uploads an image to Imgur hosting service. Nothing Concrete.
+Create nice PDFs from posts on Geeks for Geeks.
 
-I needed an uploader to share screenshots that I grab - Python seemed a bad option. So I created an Autohotkey version - see [Win-Butler](https://github.com/dufferzafar/win-butler).
+**Tech:** BeautifulSoup, Printing html to pdf using QTextDocument.
 
-**Tech:** PyImgur
-
-# <a name="lfm"></a>Last.fm
+# <a name="lfm-plays"></a>Last.fm Plays
 
 I am an avid user of the last.fm service. These scripts interact with last.fm's API.
 
@@ -57,6 +62,12 @@ View the number of songs you have listened to today.
 
 **Tech:** Parse XML responses from the API. os.Walk() to find mp3 files matching the criteria.
 
+# <a name="lfm-backup"></a>Last.fm Backup
+
+A script to backup my last.fm scrobbles, loved/banned tracks.
+
+**Tech:** XML. CSV. sqlite.
+
 # <a name="mitx"></a>MITx Solutions
 
 Set of solutions to the 6.00.1x course from EdX.
@@ -64,7 +75,13 @@ Set of solutions to the 6.00.1x course from EdX.
 https://courses.edx.org/courses/MITx/6.00.1x/3T2013/courseware/
 
 I left the course in between, as I often do.
- 
+
+# <a name="irc"></a>MusicBrainz IRC Chatlogs Downloader
+
+Script used to download IRC Chatlogs of #musicbrainz and #musicbrainz-devel.
+
+**Tech:** urllib
+
 # <a name="networx"></a>Networx XML Parser
 
 Parses [Networx](http://www.softperfect.com/products/networx) backup XMLs and outputs the data in js format. 
@@ -79,14 +96,6 @@ I have a cron job setup that dumps my network usage to files.
 
 This script reads in those files and outputs data such as data downloaded this month, data left and suggested usage.
 
-# <a name="wp"></a>WP XML to Octopress MD
-
-I used this script to shift my blog from Wordpress to Octopress.
-
-It creates individual blog posts in markdown format from a wordpress export file (XML).
-
-**Tech:** XML Parsing. Namespace Dictionaries.
-
 # <a name="linkfix"></a>Sphinx Linkfix
 
 Uses the linkcheck's output file to fix links in docs.
@@ -97,12 +106,10 @@ Originally created for [this issue](https://github.com/scrapy/scrapy/issues/606)
 
 Small Plugins that I've written/copied for sublime text.
 
-# <a name="meta"></a>Batch Edit MP3 Metadata
+# <a name="wp"></a>WP XML to Octopress MD
 
-Use Mutagen to modify artist tag of multiple mp3 files.
+I used this script to shift my blog from Wordpress to Octopress.
 
-**Tech:** Mutagen.
+It creates individual blog posts in markdown format from a wordpress export file (XML).
 
-# <a name="irc"></a>MusicBrainz IRC Chatlogs Downloader
-
-Script used to download IRC Chatlogs of #musicbrainz and #musicbrainz-devel.
+**Tech:** XML Parsing. Namespace Dictionaries.
