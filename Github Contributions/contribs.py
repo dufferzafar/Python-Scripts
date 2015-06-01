@@ -1,13 +1,20 @@
 import os
-import urllib.request
+import requests
+
+from bs4 import BeautifulSoup
 
 
 def process_url(url, out):
+    print("%s\t====>\t%s" % (url, out))
 
-    site = urllib.request.urlopen(gh_url % params)
+    response = requests.get(url)
 
-    with open(out, "wb") as out:
-        out.write(site.read())
+    soup = BeautifulSoup(response.text)
+    contribs = soup.find_all('div', class_="contribution-activity-listing")[0]
+    html = contribs.decode_contents()
+
+    with open(out, "w") as out:
+        out.write(html)
 
 if __name__ == '__main__':
 
@@ -25,7 +32,6 @@ if __name__ == '__main__':
 
         for month in range(1, 13):
             out = os.path.join(folder, str(month) + ".htm")
-            print("Fetching: " + out)
 
             if month == 12:
                 params = (year, month, year+1, 1)
