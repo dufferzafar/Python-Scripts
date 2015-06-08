@@ -68,32 +68,23 @@ def list_contributions(years):
             if not url:
                 continue
 
-            m = re.match(r'/?(.*?)/(.*?)/commits', url)
-            if m:
-                repo = (m.group(1), m.group(2))
-                if repo not in repos:
-                    repos.append(repo)
-                continue
+            if '/commits' in url:
+                if url not in repos:
+                    repos.append(url)
 
-            m = re.match(r'/?(.*?)/(.*?)/issues/(\d+)', url)
-            if m:
-                issue = (m.group(1), m.group(2), m.group(3))
-                if issue not in issues:
-                    issues.append(issue)
-                continue
+            # Bug: Github website has endpoint 'pull'
+            # while the API has 'pulls'. WUT!
+            elif '/pull' in url:
+                if url not in pulls:
+                    pulls.append(url)
 
-            m = re.match(r'/?(.*?)/(.*?)/pull/(\d+)', url)
-            if m:
-                pull = (m.group(1), m.group(2), m.group(3))
-                if pull not in pulls:
-                    pulls.append(pull)
-                continue
+            elif '/issues' in url:
+                if url not in issues:
+                    issues.append(url)
 
-            # We should never reach here!
-            print()
-            print("<|>" + link.parent.text.strip() + "<|>")
-            print(url)
-            print()
+            else:
+                # Let's hope we never reach here!
+                print(url)
 
     for year in years:
         for month in range(1, 13):
