@@ -1,29 +1,35 @@
 import os
+import re
 import requests
 
 from bs4 import BeautifulSoup
 
 
-def process_url(url, out):
-    print("%s\t====>\t%s" % (url, out))
+data = "Data"
+user = "dufferzafar"
 
-    response = requests.get(url)
 
-    soup = BeautifulSoup(response.text)
-    contribs = soup.find_all('div', class_="contribution-activity-listing")[0]
-    html = contribs.decode_contents()
+def fetch_pages(years):
+    """Fetch contribution pages from github and store them as html files."""
 
-    with open(out, "w") as out:
-        out.write(html)
+    def process_url(url, out):
+        """Download a page and extract out the contributions."""
 
-if __name__ == '__main__':
+        print("%s\t====>\t%s" % (url, out))
 
-    gh_url = "https://github.com/dufferzafar" \
-        "?tab=contributions&from=%d-%d-01&to=%d-%d-01"
+        response = requests.get(url)
 
-    data = "Data"
+        soup = BeautifulSoup(response.text)
+        contribs = soup.find_all('div', class_="contribution-activity-listing")[0]
+        html = contribs.decode_contents()
 
-    for year in range(2012, 2016):
+        with open(out, "w") as out:
+            out.write(html)
+
+    gh_url = ("https://github.com/%s?tab=contributions"
+              "&from=%d-%d-01&to=%d-%d-01")
+
+    for year in years:
 
         # Create the destination folder
         folder = os.path.join(data, str(year))
@@ -34,8 +40,8 @@ if __name__ == '__main__':
             out = os.path.join(folder, str(month) + ".htm")
 
             if month == 12:
-                params = (year, month, year+1, 1)
+                params = (user, year, month, year+1, 1)
             else:
-                params = (year, month, year, month+1)
+                params = (user, year, month, year, month+1)
 
             process_url(gh_url % params, out)
