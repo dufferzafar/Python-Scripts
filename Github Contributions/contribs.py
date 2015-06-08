@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 data = "Data"
 user = "dufferzafar"
+github = "https://github.com"
 
 
 def fetch_pages(years):
@@ -94,6 +95,20 @@ def list_contributions(years):
 
 if __name__ == '__main__':
     # fetch_pages(range(2015, 2016))
-    r, i, p = list_contributions([2014])
+    rpo, iss, pll = list_contributions([2012, 2013])
 
-    print(r)
+    # Worked on repos
+    for r in sorted(rpo):
+        print(github + r)
+
+    print("\n")
+
+    # Issues reported
+    for i in sorted(iss):
+        print(github + i)
+
+    print("\n")
+
+    # Pulls created
+    for p in sorted(pll):
+        print(github + p)
