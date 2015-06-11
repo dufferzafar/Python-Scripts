@@ -39,7 +39,13 @@ while True:
     # 1. We got rate limited.
     # 2. This was actually the last post.
     if not posts["data"]:
-        for interval in (15, 30, 60, 100):
+
+        # Bug: An extraneous post gets created
+        os.remove(filename)
+        count -= 1
+        print("Removed: %s" % filename)
+
+        for interval in (120, 240, 480, 960):
             posts = requests.get(nxt).json()
 
             if not posts["data"]:
