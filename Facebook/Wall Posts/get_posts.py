@@ -9,7 +9,7 @@ from tokens import *
 
 graph = facebook.GraphAPI(USER_TOKEN)
 profile = graph.get_object("me")
-posts = graph.get_connections(profile['id'], 'posts')
+# posts = graph.get_connections(profile['id'], 'posts')
 
 count = 1
 while True:
