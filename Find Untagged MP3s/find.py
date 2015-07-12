@@ -1,28 +1,28 @@
+#!/usr/bin/python
+
+import re
 import os
 import glob
 from mutagen.mp3 import MP3
 
-# Musicbrainz Tags
-mb_tags = [
-    u'UFID:http://musicbrainz.org'
-]
+# Taken from flask_uuid: http://git.io/vmecV
+UUID_RE = re.compile(
+    r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')
+
+# Musicbrainz Recording ID
+# https://picard.musicbrainz.org/docs/mappings/
+ufid = u'UFID:http://musicbrainz.org'
 
 
 def is_tagged(file):
-    """
-    Determine whether an MP3 file is tagged.
+    """ Determine whether an MP3 file is tagged. """
+    tags = MP3(file)
+    if ufid not in tags:
+        return False
+    else:
+        return re.match(UUID_RE, tags[ufid].data) is not None
 
-    Todo:
-        What if a file has the tags, but their 'value' is wrong?
-        So we need to ensure that the Ids are actually UUIDs.
 
-        Handle [non-album-tracks] which only have an Artist ID.
-    """
-    # See if all these tags exist in the file
-    for tag in mb_tags:
-        if tag not in MP3(file):
-            return False, tag
-    return True, None
 
 # Untagged files will be moved
 # Note: Should I just load them in Picard?
@@ -35,8 +35,5 @@ if __name__ == '__main__':
     # Todo: Handle files other than mp3
     for file in glob.glob("*.mp3"):
 
-        tagged, tag = is_tagged(file)
-
-        if not tagged:
-            print("%s not found in %s" % (tag, file))
-            os.rename(file, os.path.join(destination, file))
+        if not is_tagged(file):
+            print("Moving: %s" % file)
