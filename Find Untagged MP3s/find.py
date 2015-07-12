@@ -4,13 +4,7 @@ from mutagen.mp3 import MP3
 
 # Musicbrainz Tags
 mb_tags = [
-    u'TXXX:MusicBrainz Artist Id',
-    u'TXXX:MusicBrainz Release Group Id',
-    u'TXXX:MusicBrainz Album Id',
-    # u'TXXX:MusicBrainz Album Artist Id',
-    # u'TXXX:MusicBrainz Release Track Id',
-    # u'TXXX:MusicBrainz Album Status',
-    # u'TXXX:MusicBrainz Album Type',
+    u'UFID:http://musicbrainz.org'
 ]
 
 
