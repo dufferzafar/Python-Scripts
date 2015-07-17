@@ -33,13 +33,17 @@ Use Mutagen to modify artist tag of multiple mp3 files.
 
 **Tech:** Mutagen.
 
-
 # <a name="untagged"></a>Find Untagged MP3s
 
 Find all songs in the current directory that have not been tagged with MusicBrainz IDs and optionally move them to a separate folder.
 
 **Tech:** Mutagen. MBIDs.
 
+# <a name="gr"></a>Geeks for Geeks Scraper
+
+Create nice PDFs from posts on Geeks for Geeks.
+
+**Tech:** BeautifulSoup, Printing html to pdf using QTextDocument.
 
 # <a name="gr"></a>Goodreads Quotes
 
@@ -49,11 +53,11 @@ Couldn't decide how/what to do. So this is just half-done.
 
 **Tech:** BeautifulSoup to parse the webpage downloaded.
 
-# <a name="gr"></a>Geeks for Geeks Scraper
+# <a name="lfm-backup"></a>Last.fm Backup
 
-Create nice PDFs from posts on Geeks for Geeks.
+A script to backup my last.fm scrobbles, loved/banned tracks.
 
-**Tech:** BeautifulSoup, Printing html to pdf using QTextDocument.
+**Tech:** XML. CSV. sqlite.
 
 # <a name="lfm-plays"></a>Last.fm Plays
 
@@ -70,12 +74,6 @@ Useful when you have a huge collection of songs and you can't decide what to lis
 View the number of songs you have listened to today.
 
 **Tech:** Parse XML responses from the API. os.Walk() to find mp3 files matching the criteria.
-
-# <a name="lfm-backup"></a>Last.fm Backup
-
-A script to backup my last.fm scrobbles, loved/banned tracks.
-
-**Tech:** XML. CSV. sqlite.
 
 # <a name="mitx"></a>MITx Solutions
 
