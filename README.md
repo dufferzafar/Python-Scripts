@@ -8,6 +8,7 @@ Here are some of the scripts I've managed to write. Most of them are 'quick-and-
 
 * [0xMirror](#mirror)
 * [Batch Edit MP3 Metadata](#meta)
+* [Find Untagged MP3s](#untagged)
 * [Geeks for Geeks Scraper](#g4g)
 * [Goodreads Quotes](#gr)
 * [Last.fm Plays](#lfm-plays)
@@ -31,6 +32,14 @@ A script to create a zero-byte mirror of an entire hard disk.
 Use Mutagen to modify artist tag of multiple mp3 files.
 
 **Tech:** Mutagen.
+
+
+# <a name="untagged"></a>Find Untagged MP3s
+
+Find all songs in the current directory that have not been tagged with MusicBrainz IDs and optionally move them to a separate folder.
+
+**Tech:** Mutagen. MBIDs.
+
 
 # <a name="gr"></a>Goodreads Quotes
 
