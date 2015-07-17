@@ -10,6 +10,7 @@ Here are some of the scripts I've managed to write. Most of them are 'quick-and-
 * [Batch Edit MP3 Metadata](#meta)
 * [Find Untagged MP3s](#untagged)
 * [Geeks for Geeks Scraper](#g4g)
+* [Github Contributions](#github)
 * [Goodreads Quotes](#gr)
 * [Last.fm Plays](#lfm-plays)
 * [Last.fm Backup](#lfm-backup)
@@ -44,6 +45,12 @@ Find all songs in the current directory that have not been tagged with MusicBrai
 Create nice PDFs from posts on Geeks for Geeks.
 
 **Tech:** BeautifulSoup, Printing html to pdf using QTextDocument.
+
+# <a name="github"></a>Github Contributions
+
+Fetch all previous year contributions from Github (issues, pull requests etc.)
+
+**Tech:** Basic Web Scraping using Beautiful Soup.
 
 # <a name="gr"></a>Goodreads Quotes
 
