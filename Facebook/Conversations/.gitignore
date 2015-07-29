@@ -3,3 +3,6 @@
 
 # File containing Configuration
 config.py
+
+# Conversation Dumps
+Messages/
