@@ -7,6 +7,7 @@ Friend list is read from a config file.
 import json
 import os
 import requests
+import sys
 import time
 
 from config import friends, form_data, headers
@@ -46,9 +47,24 @@ def fetch(data):
     return response.content[9:]
 
 
+def confirm(question):
+    """ Confirm whether the files should be moved. """
+    valid = {'y': True, 'n': False}
+    while True:
+        sys.stdout.write(question + " [y/n]: ")
+        choice = raw_input().lower()
+        if choice in valid:
+            return valid[choice]
+        else:
+            sys.stdout.write("Please respond with 'y' or 'n'.\n")
+
+
 if __name__ == '__main__':
 
-    for friend_id, friend_name in friends.values():
+    for friend_id, friend_name in friends.items():
+
+        if not confirm("Fetch converstaion with '%s'?" % friend_name):
+            continue
 
         print("Retrieving Messages of: %s" % friend_name)
 
