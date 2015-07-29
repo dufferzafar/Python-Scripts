@@ -1,3 +1,6 @@
+# Your Facebook User ID
+me = "100002385400990"
+
 # Set the value you see in 'Form Data'
 form_data = {
     "__a": "",
