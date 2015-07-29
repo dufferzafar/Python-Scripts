@@ -48,21 +48,21 @@ def fetch(data):
 
 if __name__ == '__main__':
 
-    for friend in friends:
+    for friend_id, friend_name in friends.values():
 
-        print("Retrieving Messages of: %s" % friend['name'])
+        print("Retrieving Messages of: %s" % friend_name)
 
         # Setup data directory
-        dirname = os.path.join(ROOT, friend['name'])
+        dirname = os.path.join(ROOT, friend_name)
         mkdir(dirname)
 
         # We want it ALL!
-        offset, data = friend['offset'] or 0, {"payload": ""}
+        offset, data = 0, {"payload": ""}
         while END_MARK not in data['payload']:
 
-            form_data["messages[user_ids][%s][offset]" % friend['id']] = offset
-            form_data["messages[user_ids][%s][limit]" % friend['id']] = limit
-            form_data["messages[user_ids][%s][timestamp]" % friend['id']] = str(timestamp)
+            form_data["messages[user_ids][%s][offset]" % friend_id] = offset
+            form_data["messages[user_ids][%s][limit]" % friend_id] = limit
+            form_data["messages[user_ids][%s][timestamp]" % friend_id] = str(timestamp)
 
             content = fetch(form_data)
 
@@ -86,7 +86,7 @@ if __name__ == '__main__':
             time.sleep(2)
 
         # Make the form_data usable for the next user
-        form_data.pop("messages[user_ids][%s][offset]" % friend['id'])
-        form_data.pop("messages[user_ids][%s][limit]" % friend['id'])
+        form_data.pop("messages[user_ids][%s][offset]" % friend_id)
+        form_data.pop("messages[user_ids][%s][limit]" % friend_id)
 
         print("\t---END---")

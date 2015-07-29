@@ -26,10 +26,6 @@ headers = {
 }
 
 # You'll have to generate a list of friend IDs on your own.
-friends = [
-    {
-        "id": "facebok_id_of_friend",
-        "name": "name_of_friend",
-        "offset": 0
-    }
-]
+friends = {
+    "facebok_id_of_friend": "name_of_friend",
+}
