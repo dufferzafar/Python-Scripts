@@ -1,2 +1,5 @@
 # Random stuff I've been testing
 *.txt
+
+# File containing Configuration
+config.py
