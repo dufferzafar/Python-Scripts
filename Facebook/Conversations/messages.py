@@ -14,10 +14,7 @@ from config import friends, form_data, headers
 
 
 # Can be used to download a range of messages
-offset = 0
 limit = 2000
-
-timestamp = 0
 
 # Used to find the end of conversation thread
 END_MARK = "end_of_history"
@@ -39,7 +36,7 @@ def fetch(data):
     offset = [v for k, v in data.items() if 'offset' in k][0]
     limit = [v for k, v in data.items() if 'limit' in k][0]
 
-    print("\t%7d  -  %7d" % (offset, offset+limit))
+    print("\t%6d  -  %6d" % (offset, offset+limit))
 
     response = requests.post(FB_URL, data=data, headers=headers)
 
@@ -72,8 +69,12 @@ if __name__ == '__main__':
         dirname = os.path.join(ROOT, friend_name)
         mkdir(dirname)
 
+        # These parameters need to be reset everytime
+        offset = 0
+        timestamp = 0
+        data = {"payload": ""}
+
         # We want it ALL!
-        offset, data = 0, {"payload": ""}
         while END_MARK not in data['payload']:
 
             form_data["messages[user_ids][%s][offset]" % friend_id] = offset
@@ -105,4 +106,4 @@ if __name__ == '__main__':
         form_data.pop("messages[user_ids][%s][offset]" % friend_id)
         form_data.pop("messages[user_ids][%s][limit]" % friend_id)
 
-        print("\t---END---")
+        print("\t-----END-----")
