@@ -13,6 +13,8 @@ from datetime import datetime as DT
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
+from messages import mkdir
+
 ROOT = "Messages"
 date_format = "%Y-%m-%d"
 
@@ -23,6 +25,8 @@ def pretty_epoch(epoch, fmt):
 
 
 if __name__ == '__main__':
+
+    mkdir('Plot')
 
     for friend in os.listdir(ROOT):
 
@@ -72,4 +76,4 @@ if __name__ == '__main__':
 
         # Save plot
         plt.title("Conversation with %s" % friend)
-        plt.savefig("%s.png" % friend)
+        plt.savefig("Plot/%s.png" % friend)
