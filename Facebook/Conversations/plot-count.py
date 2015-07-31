@@ -22,51 +22,54 @@ def pretty_epoch(epoch, fmt):
     return time.strftime(fmt, time.localtime(epoch))
 
 
-for friend in os.listdir(ROOT):
+if __name__ == '__main__':
 
-    print("Processing conversation with %s" % friend)
+    for friend in os.listdir(ROOT):
 
-    messages = {}
+        print("Processing conversation with %s" % friend)
 
-    # Read all the files of a friend & build a hashmap
-    for file in os.listdir(os.path.join(ROOT, friend)):
+        messages = {}
 
-        with open(os.path.join(ROOT, friend, file)) as inp:
+        # Read all the files of a friend & build a hashmap
+        for file in os.listdir(os.path.join(ROOT, friend)):
 
-            data = json.load(inp)
-            for act in data['payload']['actions']:
+            with open(os.path.join(ROOT, friend, file)) as inp:
 
-                # BUG: Why wouldn't body be present?
-                if 'body' in act:
+                data = json.load(inp)
+                for act in data['payload']['actions']:
 
-                    # Facebook uses timestamps with 13 digits for milliseconds
-                    # precision, while Python only needs the first 10 digits.
-                    date = pretty_epoch(act['timestamp'] // 1000, date_format)
+                    # BUG: Why wouldn't body be present?
+                    if 'body' in act:
 
-                    if date in messages:
-                        messages[date] += 1
-                    else:
-                        messages[date] = 1
+                        # Facebook uses timestamps with 13 digits for milliseconds
+                        # precision, while Python only needs the first 10 digits.
+                        date = pretty_epoch(act['timestamp'] // 1000, date_format)
 
-    # Begin creating a new plot
-    plt.figure()
+                        if date in messages:
+                            messages[date] += 1
+                        else:
+                            messages[date] = 1
 
-    # Prepare the date
-    x, y = [], []
-    for date in messages.keys():
-        x.append(mdates.date2num(DT.strptime(date, date_format)))
-        y.append(messages[date])
+        # Begin creating a new plot
+        plt.figure()
 
-    # Use custom date format
-    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
-    plt.gca().xaxis.set_major_locator(mdates.MonthLocator())
+        # Prepare the date
+        x, y = [], []
+        for date in messages.keys():
+            x.append(mdates.date2num(DT.strptime(date, date_format)))
+            y.append(messages[date])
 
-    # Plot!
-    plt.plot_date(x, y)
+        # Use custom date format
+        plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
+        plt.gca().xaxis.set_major_locator(mdates.MonthLocator())
 
-    # Ensure that the x-axis ticks don't overlap
-    plt.gcf().autofmt_xdate()
+        # Plot!
+        plt.plot_date(x, y)
 
-    # Save plot
-    plt.title("Conversation with %s" % friend)
-    plt.savefig("Plot-%s.png" % friend)
+        # Ensure that the x-axis ticks don't overlap
+        plt.gcf().autofmt_xdate()
+        plt.gcf().set_size_inches(17, 9)
+
+        # Save plot
+        plt.title("Conversation with %s" % friend)
+        plt.savefig("%s.png" % friend)
