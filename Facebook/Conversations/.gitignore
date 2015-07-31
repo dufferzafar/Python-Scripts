@@ -6,3 +6,6 @@ config.py
 
 # Conversation Dumps
 Messages/
+
+# Plots
+*.png
