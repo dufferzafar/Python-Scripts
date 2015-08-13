@@ -40,6 +40,6 @@ for friend in os.listdir(ROOT):
     # Sort by timestamp and iterate
     for stamp in sorted(messages.keys())[:25]:
         m = messages[stamp]
-        print('%s:\t%s' % (m.author, m.body))
+        print('%s:\t%s' % (m.author, m.body.encode('ascii', 'ignore')))
 
     print('---------------------------------------------------')
