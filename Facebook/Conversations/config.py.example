@@ -24,11 +24,11 @@ headers = {
     "content-type": "application/x-www-form-urlencoded",
     "origin": "https://www.facebook.com",
     "pragma": "no-cache",
-    "referer": "https://www.facebook.com/messages/zuck"
-    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.122 Safari/537.36",
+    "referer": "https://www.facebook.com/messages/zuck",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.122 Safari/537.36"
 }
 
 # You'll have to generate a list of friend IDs on your own.
 friends = {
-    "facebok_id_of_friend": "name_of_friend",
+    "facebok_id_of_friend": "name_of_friend"
 }
